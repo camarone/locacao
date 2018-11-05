@@ -27,8 +27,8 @@ class CadastroDeAluguel(models.Model):
                                     null=True, unique=True)
     comodante = models.ForeignKey(Pessoa, related_name='comodante2comodante', on_delete=models.SET_NULL,
                                    null=True)
-    dataRequerimento = models.DateField(verbose_name="Data de Falecimento", blank=True)
-    dataLocacao = models.DateField(verbose_name="Data de Sepultamento", blank=True)
+    dataRequerimento = models.DateField(verbose_name="Data de Requerimento", blank=True)
+    dataLocacao = models.DateField(verbose_name="Data de Devolução", blank=True)
     parentesco = models.ForeignKey(Parentesco, on_delete=models.SET_NULL, blank=True, null=True,verbose_name="Grau de Parentesco")
     cadeira = models.ForeignKey(Cadeira, on_delete=models.SET_NULL, blank=True, null=True,verbose_name="Codigo Cadeira")
 

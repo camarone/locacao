@@ -32,19 +32,11 @@
         {% url opts|admin_urlname:'history' original.pk|admin_urlquote as history_url %}
         <a href="{% add_preserved_filters history_url %}" class="historylink">{% trans "History" %}</a>
     </li>
-     
-	{% if 'cadastrodeobito' in history_url %}
+{% if 'cadastrodealuguel' in history_url %}  
 	<li>		
-        <a href="{% url 'gerartermodeciencia' original.pk %}" class="historylink">Imprimir Termo de Ciência</a>
+        <a href="{% url 'gerarcontrato' original.pk %}" class="historylink">Imprimir Contrato</a>
     </li>
-	  <li>
-        <a href="{% url 'gerarautorizacaosepultamento' original.pk %}" class="historylink">Imprimir Autorização de Sepultamento</a>
-    </li>
-    
-	<li>		
-        <a href="{% url 'gerarpdf' original.pk %}" class="historylink">Imprimir Termo de Concessão</a>
-    </li>
-	{% endif %}
+{% endif %}
 
 	
     {% if has_absolute_url %}<li><a href="{{ absolute_url }}" class="viewsitelink">{% trans "View on site" %}</a></li>{% endif %}

@@ -97,7 +97,7 @@ def gerarcontrato(request,cadastrodealuguel_id):
         falecido=aluguel.comodante.nome
 
 
-        s = parag %(aluguel.nome)
+        s = parag %(aluguel.comodante.nome,aluguel.comodante.etadocivil,aluguel.comodante.profissao,aluguel.comodante.nacionalidade,aluguel.comodante.rg,aluguel.comodante.cpf,aluguel.comodante.endereco,aluguel.comodante.bairro,aluguel.comodante.municipios,aluguel.comodante.numero,aluguel.comodante.telefone,)
         return s
 
     response = HttpResponse(content_type='application/pdf')
@@ -136,8 +136,9 @@ def gerarcontrato(request,cadastrodealuguel_id):
     Elements.append(Paragraph('<br />',styles['Justify']))
     Elements.append(Paragraph('',styles['Justify']))
     Elements.append(Paragraph(TXT_CONTRATO_1,styles['Justify']))
+
     Elements.append(Paragraph('<br /><br /><br />',styles['Justify']))
-    #Elements.append(Paragraph(pegadados(TERMO_DE_CIENCIA_P_1),styles['Justify']))
+    Elements.append(Paragraph(pegadados(TXT_CONTRATO_2),styles['Justify']))
     #Elements.append(Paragraph(TERMO_DE_CIENCIA_P_2 %(obito.cemiterio,obito.falecido.nome),styles['Justify']))
     Elements.append(Paragraph('<br /><br /><br />',styles['Justify']))
     #Elements.append(Paragraph(texttext,styles['Justify']))
