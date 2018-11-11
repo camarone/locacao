@@ -16,6 +16,7 @@ class Profissao(models.Model):
     nome = models.CharField(verbose_name="Profissao",max_length=150)
     def __str__(self):
         return self.nome
+
 class Nacionalidade(models.Model):
     nome = models.CharField(max_length=150)
     def __str__(self):
@@ -26,8 +27,25 @@ class Avaliador(models.Model):
         return self.nome
 class Cadeira(models.Model):
     numero = models.CharField(max_length=4,unique=True)
+    modelo = models.CharField(max_length=150,unique=True)
     def __str__(self):
         return self.numero
+class CadeiraDeBanho(models.Model):
+    numero = models.CharField(max_length=4,unique=True)
+    modelo = models.CharField(max_length=150,unique=True)
+    def __str__(self):
+        return self.numero
+class Andador(models.Model):
+    numero = models.CharField(max_length=4,unique=True)
+    modelo = models.CharField(max_length=150,unique=True)
+    def __str__(self):
+        return self.numero
+class Muleta(models.Model):
+    numero = models.CharField(max_length=4,unique=True)
+    modelo = models.CharField(max_length=150,unique=True)
+    def __str__(self):
+        return self.numero
+
 
 class Parentesco(models.Model):
     nome = models.CharField(max_length=150)

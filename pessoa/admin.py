@@ -46,7 +46,7 @@ class CadastroDeAluguelAdmin(admin.ModelAdmin):
             'description': (
                 'Cadastro de locação de cadeiras com usuario e requerente. Não esquecer de fazer o cadastro completo do '
                 'Requerente para emitir a guia de Autorização'),
-            'fields': [ ('usuario', 'comodante'),('parentesco', 'cadeira'),('dataRequerimento', 'dataLocacao'),
+            'fields': [ ('usuario', 'comodante'),('parentesco'),( 'cadeira','dataEmprestimoCadeira','dataDevolucaoCadeira'),('cadeiraDeBanho','dataEmprestimoCadeiraDeBanho','dataDevolucaoCadeiraDeBanho'),('andador','dataEmprestimoAndador','dataDevolucaoAndador'),('muleta','dataEmprestimoMuleta','dataDevolucaoMuleta'),('dataRequerimento', 'dataLocacao'),
                        ]}),
     ]
 admin.site.register(CadastroDeAluguel,CadastroDeAluguelAdmin)

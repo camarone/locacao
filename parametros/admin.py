@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import  Estado, Cidade, Bairro, Profissao, Nacionalidade, Avaliador, Cadeira, Parentesco, Estadocivil, Rotariano
+from .models import  Estado, Cidade, Bairro, Profissao, Nacionalidade, Avaliador, Cadeira, CadeiraDeBanho, Andador,Muleta, Parentesco, Estadocivil, Rotariano
 
 
 class EstadoAdmin(admin.ModelAdmin):
@@ -30,6 +30,15 @@ class AvaliadorAdmin(admin.ModelAdmin):
 class CadeiraAdmin(admin.ModelAdmin):
     ordering = ['numero']
     search_fields = ['numero']
+class CadeiraDeBanhoAdmin(admin.ModelAdmin):
+    ordering = ['numero']
+    search_fields = ['numero']
+class MuletaAdmin(admin.ModelAdmin):
+    ordering = ['numero']
+    search_fields = ['numero']
+class AndadorAdmin(admin.ModelAdmin):
+    ordering = ['numero']
+    search_fields = ['numero']
 
 class ParentescoAdmin(admin.ModelAdmin):
     ordering = ['nome']
@@ -49,6 +58,9 @@ admin.site.register(Profissao,ProfissaoAdmin)
 admin.site.register(Nacionalidade,NacionalidadeAdmin)
 admin.site.register(Avaliador,AvaliadorAdmin)
 admin.site.register(Cadeira,CadeiraAdmin)
+admin.site.register(CadeiraDeBanho,CadeiraDeBanhoAdmin)
+admin.site.register(Muleta,MuletaAdmin)
+admin.site.register(Andador,AndadorAdmin)
 admin.site.register(Parentesco,ParentescoAdmin)
 admin.site.register(Estadocivil,EstadocivilAdmin)
 admin.site.register(Rotariano,RotarianoAdmin)
