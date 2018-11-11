@@ -30,7 +30,7 @@ class CadastroDeAluguelAdmin(admin.ModelAdmin):
             return 'Termo de Concessão'
 
         return format_html(
-            '<a href="http://127.0.0.1:8000/pessoa/gerarcontrato/%s/">Contrato</a><a '
+            '<a href="/pessoa/gerarcontrato/%s/">Contrato</a><a '
              % (
             obj.id))
 
