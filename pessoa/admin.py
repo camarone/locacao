@@ -5,6 +5,7 @@ from .models import CadastroDeAluguel
 from django.http import HttpResponseRedirect
 from django.utils.html import format_html, format_html_join, mark_safe
 from django.utils.translation import gettext_lazy as _
+from django.conf import settings
 admin.site.register(Pessoa)
 
 
@@ -32,7 +33,7 @@ class CadastroDeAluguelAdmin(admin.ModelAdmin):
             return 'Termo de Concessão'
 
         return format_html(
-            '<a href="/pessoa/gerarcontrato/{}/">Contrato</a><a ', obj.id)
+            '<a href="{}/pessoa/gerarcontrato/{}/">Contrato</a><a ',settings.MEDIA_ROOT, obj.id)
 
     termo_de_Concessao.short_description = 'Termo de Concessão'
 
