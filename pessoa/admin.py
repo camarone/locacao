@@ -8,6 +8,7 @@ from django.utils.translation import gettext_lazy as _
 admin.site.register(Pessoa)
 
 
+
 class CadastroDeAluguelAdmin(admin.ModelAdmin):
 
     #autocomplete_fields = ['usuario', 'comodante']
@@ -22,6 +23,7 @@ class CadastroDeAluguelAdmin(admin.ModelAdmin):
 
 
 
+
     def termo_de_Concessao(self, obj):
         def __str__(self):
             return 'Termo de Concessão'
@@ -30,9 +32,7 @@ class CadastroDeAluguelAdmin(admin.ModelAdmin):
             return 'Termo de Concessão'
 
         return format_html(
-            '<a href="/pessoa/gerarcontrato/%s/">Contrato</a><a '
-             % (
-            obj.id))
+            '<a href="/pessoa/gerarcontrato/{}/">Contrato</a><a ', obj.id)
 
     termo_de_Concessao.short_description = 'Termo de Concessão'
 
@@ -41,10 +41,10 @@ class CadastroDeAluguelAdmin(admin.ModelAdmin):
     #prepopulated_fields = {"mae": ("quadra","lote")}
 
     fieldsets = [
-        ('Cadastro de Locação de Cadeira', {
+        ('Cadastro de Empréstimo de Cadeira', {
             'classes': ('wide ', 'extrapretty'),
             'description': (
-                'Cadastro de locação de cadeiras com usuario e requerente. Não esquecer de fazer o cadastro completo do '
+                'Cadastro de Emprestimo de cadeiras com usuario e requerente. Não esquecer de fazer o cadastro completo do '
                 'Requerente para emitir a guia de Autorização'),
             'fields': [ ('usuario', 'comodante'),('parentesco'),( 'cadeira','dataEmprestimoCadeira','dataDevolucaoCadeira'),('cadeiraDeBanho','dataEmprestimoCadeiraDeBanho','dataDevolucaoCadeiraDeBanho'),('andador','dataEmprestimoAndador','dataDevolucaoAndador'),('muleta','dataEmprestimoMuleta','dataDevolucaoMuleta'),('dataRequerimento', 'dataLocacao'),
                        ]}),
